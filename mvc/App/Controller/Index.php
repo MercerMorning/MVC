@@ -1,7 +1,9 @@
 <?php
 namespace App\Controller;
+use App\Model\modelUser;
+use Base\Controller;
 
-class Index
+class Index extends Controller
 {
     public $view;
 
@@ -13,5 +15,10 @@ class Index
     public function mainAction()
     {
         echo 'main';
+    }
+
+    public function preAction()
+    {
+        $this->view->userModel = new modelUser();
     }
 }
